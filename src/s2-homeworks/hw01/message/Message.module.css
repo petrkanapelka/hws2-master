@@ -1,31 +1,45 @@
 .message {
+    width: 527px;
+    height: auto;
+    background: #06c;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 13px;
+    align-self: flex-end;
+    border-radius: 25px;
 
 }
 
 .imageAndText {
-
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .imageAndText img {
-
+    width: 48px;
+    height: 48px;
 }
 
 .text {
-
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
 }
 
-.text:after {
-
-}
+.text:after {}
 
 .name {
-
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
 }
 
-.messageText {
-
-}
+.messageText {}
 
 .time {
-
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    color: #000;
+    align-self: flex-end;
 }
