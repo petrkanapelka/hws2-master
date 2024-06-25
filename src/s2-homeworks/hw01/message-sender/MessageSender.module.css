@@ -1,4 +1,8 @@
-.sendForm {}
+.sendForm {
+    display: flex;
+    align-items: center;
+    gap: 44px;
+}
 
 .textarea {
     border-radius: 20px;
@@ -6,7 +10,12 @@
     height: 40px;
     box-shadow: 0 1px 2px 0 rgba(29, 33, 38, 0.1), 0 5px 20px 0 rgba(29, 33, 38, 0.03);
     background: #f5f7fb;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
     resize: none;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .button {
