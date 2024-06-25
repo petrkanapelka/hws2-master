@@ -10,10 +10,9 @@
 
 }
 
-.hw>div {
+.message-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
 .hwTitle {
@@ -21,4 +20,11 @@
     font-weight: 600;
     font-size: 22px;
     color: #000;
+}
+
+hr {
+    border: 1px solid #d9d9d9;
+    width: 100%;
+    height: 0px;
+    margin: 10px 0 24px;
 }
