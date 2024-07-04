@@ -1,4 +1,3 @@
-import React from 'react'
 import {pureOnBlur} from '../GreetingContainer'
 
 let name: any
