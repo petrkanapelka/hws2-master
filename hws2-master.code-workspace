@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "hws2-master",
+			"path": "."
+		}
+	],
+	"settings": {
+		"cSpell.words": [
+			"зависимости",
+			"понять",
+			"простить"
+		],
+		"cSpell.enableFiletypes": [
+			"!typescript",
+			"!typescriptreact"
+		]
+	}
+}
