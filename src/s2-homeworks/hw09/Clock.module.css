@@ -1,14 +1,37 @@
 .buttonsContainer {
+    display: flex;
+    gap: 21px;
+    margin-top: 35px;
 }
 
 .clock {
+    padding: 0 0 20px 0;
 }
 
 .watch {
+    font-weight: 400;
+    font-size: 20px;
+    color: #000;
 }
 
 .watch strong {
+    font-weight: 600;
 }
 
 .more {
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+}
+
+#hw9-button-start {
+    border-radius: 3px;
+    padding: 5px 24px;
+    width: 84px;
+    height: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 143%;
+    color: #fff;
 }
