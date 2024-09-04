@@ -1,8 +1,21 @@
 .container {
+    border-radius: 10px;
+    width: 300px;
+    margin-left: 25px;
+    box-sizing: content-box;
 }
 
 .wrapper {
+    display: flex;
+    align-items: center;
+    box-sizing: content-box;
 }
 
 .number {
+    margin-left: 22px;
+    margin-right: 22px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%;
+    color: #000;
 }
