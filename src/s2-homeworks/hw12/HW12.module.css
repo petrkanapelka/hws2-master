@@ -19,5 +19,15 @@ html {
 }
 
 .select {
+    border: 1px solid #323232;
+    border-radius: 2px;
+    width: 171px;
+    height: 36px;
+    margin-top: 10px;
+}
 
+.select-title {
+    font-weight: 400;
+    font-size: 14px;
+    color: #000;
 }
