@@ -1,4 +1,4 @@
 {
     "cSpell.words": ["анимация", "зависимости", "понять", "простить"],
-    "cSpell.enableFiletypes": ["!json", "!typescript", "!typescriptreact"]
+    "cSpell.enableFiletypes": ["!html", "!json", "!typescript", "!typescriptreact"]
 }
