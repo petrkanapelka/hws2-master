@@ -1,5 +1,5 @@
 .item {
-    background-color: #fff;
+    /* background-color: #fff; */
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -30,7 +30,7 @@
 }
 
 .thead {
-    background: #e5e5e5;
+    /* background: #e5e5e5; */
     width: 606px;
     height: 20px;
     font-weight: 600;
