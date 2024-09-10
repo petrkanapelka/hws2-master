@@ -4,19 +4,14 @@ import React, {
     ChangeEvent,
 } from 'react'
 import s from './SuperSelect.module.css'
-import { useSelector } from 'react-redux'
-import { AppStoreType } from '../../../hw10/bll/store'
-
 type DefaultSelectPropsType = DetailedHTMLProps<
     SelectHTMLAttributes<HTMLSelectElement>,
     HTMLSelectElement
 >
-
 type SuperSelectPropsType = DefaultSelectPropsType & {
     options?: any[]
     onChangeOption?: (option: any) => void
 }
-
 const SuperSelect: React.FC<SuperSelectPropsType> = ({
     options,
     className,
@@ -25,7 +20,6 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
     ...restProps
 }) => {
 
-    const themeId = useSelector<AppStoreType, number>(state => state.theme.themeId)
     const mappedOptions: any[] = options
         ? options.map((o) => (
             <option
@@ -39,25 +33,19 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
         ))
         : [] // map options with key
 
-
     const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
-        // делают студенты
-        const value = Number(e.currentTarget.value);
+        const value = e.currentTarget.value;
+        console.log("🚀 ~ onChangeCallback ~ value ➔", value);
         if (onChangeOption) {
-            onChangeOption(value)
-        }
-        if (onChange) {
-            onChange(e)
+            onChangeOption(value);
         }
     }
 
     const finalSelectClassName = s.select + (className ? ' ' + className : '')
-
     return (
         <select
             className={finalSelectClassName}
             onChange={onChangeCallback}
-            value={themeId}
             {...restProps}
         >
             {mappedOptions}
