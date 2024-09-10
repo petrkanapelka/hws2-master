@@ -7,7 +7,7 @@
 }
 
 html {
-    background-color: rosybrown;
+    background-color: var(--background);
 }
 
 body {
