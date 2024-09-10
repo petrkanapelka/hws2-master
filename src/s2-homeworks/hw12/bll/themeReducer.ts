@@ -11,7 +11,7 @@ type ActionType = ReturnType<typeof changeThemeId>;
 export const themeReducer = (state = initState, action: ActionType): StateType => {
     switch (action.type) {
         case 'SET_THEME_ID':
-            return { ...state, themeId: action.id };
+            return { themeId: action.id };
         default:
             return state;
     }
