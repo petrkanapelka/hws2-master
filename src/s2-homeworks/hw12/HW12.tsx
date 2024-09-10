@@ -11,19 +11,21 @@ const themes = [
     { id: 2, value: 'blue' },
     { id: 3, value: 'dark' },
 ]
-
 const HW12 = () => {
     const dispatch = useDispatch()
-    const themeId = useSelector((state: AppStoreType) => state.theme.themeId)
+    const themeId = useSelector<AppStoreType, number>((state) => state.theme.themeId)
+
     const change = (id: number) => {
-        dispatch(changeThemeId(id))
+        dispatch(changeThemeId(+id))
     }
     useEffect(() => {
-        document.documentElement.dataset.theme = themeId + ''
-    }, [themeId])
+        document.documentElement.dataset.theme = themeId + '';
+    }, [themeId]);
+
 
     return (
         <div id={'hw12'}>
+
             <div id={'hw12-text'} className={s2.hwTitle}>
                 Homework #12
             </div>
@@ -34,10 +36,10 @@ const HW12 = () => {
                     className={s.select}
                     options={themes}
                     onChangeOption={change}
+                    value={themeId}
                 />
             </div>
         </div>
     )
 }
-
 export default HW12
