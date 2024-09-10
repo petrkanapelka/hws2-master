@@ -3,7 +3,8 @@
     border-radius: 2px;
     width: 165px;
     height: 24px;
-    /* background: #fff; */
+    background-color: var(--background);
+    color: var(--color);
 }
 
 .select:focus {
@@ -13,7 +14,8 @@
     border: 1px solid #c2c2c2;
     border-radius: 2px;
     box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.15);
-    /* background: #fff; */
+    background-color: var(--background);
+    color: var(--color);
 }
 
 
