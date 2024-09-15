@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import s from './HW12.module.css'
 import s2 from '../../s1-main/App.module.css'
 import SuperSelect from '../hw07/common/c5-SuperSelect/SuperSelect'
@@ -17,12 +17,11 @@ const HW12 = () => {
     const themeId = useSelector<AppStoreType, number>((state) => state.theme.themeId)
 
     const change = (id: number) => {
-        console.log("🚀 ~ change ~ id ➔", id);
         dispatch(changeThemeId(+id))
     }
 
     useEffect(() => {
-        document.documentElement.dataset.theme = themeId + '';
+        document.documentElement.dataset.theme = themeId.toString();
     }, [themeId]);
 
 
