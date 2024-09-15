@@ -13,6 +13,7 @@ const themes = [
 ]
 const HW12 = () => {
     const dispatch = useDispatch()
+
     const themeId = useSelector<AppStoreType, number>((state) => state.theme.themeId)
 
     const change = (id: number) => {
