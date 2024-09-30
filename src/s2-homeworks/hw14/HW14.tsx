@@ -60,6 +60,7 @@ const HW14 = () => {
         const params = Object.fromEntries(searchParams)
         sendQuery(params.find || '')
         setFind(params.find || '')
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const mappedTechs = techs.map(t => (
