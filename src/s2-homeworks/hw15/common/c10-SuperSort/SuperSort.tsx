@@ -5,7 +5,7 @@ import noneIcon from '../icons/none.svg';
 // добавить в проект иконки и импортировать
 // const downIcon = '[\\/]'
 // const upIcon = '[/\\]'
-// const noneIcon = '[--]'/
+// const noneIcon = '[--]'
 
 export type SuperSortPropsType = {
     id?: string
@@ -43,8 +43,13 @@ const SuperSort: React.FC<SuperSortPropsType> = (
             id={id + '-sort-' + value}
             onClick={onChangeCallback}
         >
-            {/* Добавить иконку */}
-            <img src={icon} alt='icon' style={{width: '15px', height: '15px'}}></img>
+            <img src={icon} alt='icon' style={{ width: '15px', height: '15px' }} id={id + '-icon-' + sort}></img>
+
+            {/*сделать иконку*/}
+            {/*<img*/}
+            {/*    id={id + '-icon-' + sort}*/}
+            {/*    src={icon}*/}
+            {/*/>*/}
         </span>
     )
 }
