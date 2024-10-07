@@ -6,7 +6,7 @@ import SuperPagination from './common/c9-SuperPagination/SuperPagination'
 import { useSearchParams } from 'react-router-dom'
 import SuperSort from './common/c10-SuperSort/SuperSort'
 
-/**
+/*
 * 1 - дописать SuperPagination
 * 2 - дописать SuperSort
 * 3 - проверить pureChange тестами
@@ -47,11 +47,12 @@ const HW15 = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<TechType[]>([])
 
-    const sendQuery = (params: any) => {
+    const sendQuery = (params: ParamsType) => {
         setLoading(true)
         getTechs(params)
             .then((res) => {
                 // делает студент
+
                 // сохранить пришедшие данные
                 if (res) {
                     setTechs(res.data.techs)
@@ -68,35 +69,36 @@ const HW15 = () => {
         setPage(newPage)
         setCount(newCount)
 
-        sendQuery({ page: newPage, count: newCount })
+        sendQuery({
+            page: newPage, count: newCount,
+            sort
+        })
         setSearchParams(prev => {
-            // создаём новый объект параметров
             const params = new URLSearchParams(prev)
             params.set('page', newPage.toString())
             params.set('count', newCount.toString())
-            return params // возвращаем корректный URLSearchParams
+            return params
         })
     }
 
     const onChangeSort = (newSort: string) => {
         setSort(newSort)
-        setPage(1) // при сортировке сбрасывать на 1 страницу
+        setPage(1)
 
         setSearchParams(prev => {
             const params = new URLSearchParams(prev)
             params.set('sort', newSort)
-            params.set('page', '1') // сбрасываем страницу при сортировке
-            return params // возвращаем корректный URLSearchParams
+            params.set('page', '1')
+            return params
         })
     }
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
-        sendQuery({ page: params.page, count: params.count })
+        sendQuery({ page: +params.page, count: +params.count, sort })
         setPage(+params.page || 1)
         setCount(+params.count || 4)
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, [searchParams, sort])
 
     const mappedTechs = techs.map(t => (
         <div key={t.id} className={s.row}>
@@ -109,31 +111,32 @@ const HW15 = () => {
             </div>
         </div>
     ))
-
     let opacity = idLoading ? '0.1' : '1'
     return (
         <div id={'hw15'} style={{ position: 'relative' }}>
             <div className={s2.hwTitle}>Homework #15</div>
             <hr></hr>
-            {idLoading && <div id={'hw15-loading'} className={s.loading} ></div>}
-            <div className={s.hw15} style={{ opacity: opacity, position: 'relative' }}>
+            <hr></hr>
+            {idLoading && <div id={'hw15-loading'} className={s.loading}></div>}
+            <div className={s2.hw} style={{ opacity: opacity, position: 'relative' }}>
+
                 <SuperPagination
                     page={page}
                     itemsCountForPage={count}
                     totalCount={totalCount}
                     onChange={onChangePagination}
-                    opacity={opacity}
+                    id='hw15'
                 />
 
                 <div className={s.rowHeader}>
                     <div className={s.techHeader}>
                         tech
-                        <SuperSort sort={sort} value={'tech'} onChange={onChangeSort} />
+                        <SuperSort sort={sort} value={'tech'} onChange={onChangeSort} id='hw15' />
                     </div>
 
                     <div className={s.developerHeader}>
                         developer
-                        <SuperSort sort={sort} value={'developer'} onChange={onChangeSort} />
+                        <SuperSort sort={sort} value={'developer'} onChange={onChangeSort} id='hw15' />
                     </div>
                 </div>
 
