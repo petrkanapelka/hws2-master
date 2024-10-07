@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import s2 from '../../s1-main/App.module.css'
 import s from './HW15.module.css'
 import axios from 'axios'
@@ -65,6 +65,11 @@ const HW15 = () => {
             })
     }
 
+    useEffect(() => {
+        sendQuery({ page, count, sort });
+    }, [count, page, sort]);
+
+
     const onChangePagination = (newPage: number, newCount: number) => {
         setPage(newPage)
         setCount(newCount)
@@ -95,10 +100,13 @@ const HW15 = () => {
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
-        sendQuery({ page: +params.page, count: +params.count, sort })
-        setPage(+params.page || 1)
-        setCount(+params.count || 4)
-    }, [searchParams, sort])
+        const currentPage = +params.page || 1;
+        const currentCount = +params.count || 4;
+        sendQuery({ page: currentPage, count: currentCount, sort });
+        setPage(currentPage);
+        setCount(currentCount);
+    }, [searchParams, sort]);
+
 
     const mappedTechs = techs.map(t => (
         <div key={t.id} className={s.row}>
@@ -111,6 +119,7 @@ const HW15 = () => {
             </div>
         </div>
     ))
+    console.log("🚀 ~ HW15 ~ mappedTechs ➔", mappedTechs);
     let opacity = idLoading ? '0.1' : '1'
     return (
         <div id={'hw15'} style={{ position: 'relative' }}>
