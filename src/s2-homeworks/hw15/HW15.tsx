@@ -125,7 +125,6 @@ const HW15 = () => {
         <div id={'hw15'} style={{ position: 'relative' }}>
             <div className={s2.hwTitle}>Homework #15</div>
             <hr></hr>
-            <hr></hr>
             {idLoading && <div id={'hw15-loading'} className={s.loading}></div>}
             <div className={s2.hw} style={{ opacity: opacity, position: 'relative' }}>
 
